@@ -35,7 +35,8 @@ function publishService (app, path) {
   const serviceDescriptor = {
     uuid: app.uuid,
     path: stripSlashes(path),
-    events: service.distributedEvents || service._serviceEvents
+    events: service.distributedEvents || service._serviceEvents,
+    docs: service.docs
   }
   // Skip internal services
   if (isInternalService(app, serviceDescriptor)) {
