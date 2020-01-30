@@ -10,6 +10,7 @@ class RemoteService {
     // This flag indicates to the plugin this is a remote service
     this.remote = true
     this.remoteEvents = options.events || ['created', 'updated', 'patched', 'removed']
+    this.docs = options.docs
   }
 
   setup (app, path) {
