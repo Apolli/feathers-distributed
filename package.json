@@ -37,7 +37,7 @@
     "start:gateway": "cd example/gateway && npm install && npm start",
     "start:service": "cd example/service && npm install && npm start",
     "start": "npm run compile && npm-run-all --parallel start:**",
-    "postinstall": "npm run install"
+    "postinstall": "npm install"
   },
   "standard": {
     "parser": "babel-eslint",
