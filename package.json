@@ -1,7 +1,7 @@
 {
   "name": "@kalisio/feathers-distributed",
   "description": "Distribute your Feathers services as microservices",
-  "version": "0.7.1",
+  "version": "1.0.4",
   "homepage": "https://github.com/kalisio/feathers-distributed",
   "main": "lib/",
   "keywords": [
@@ -22,13 +22,13 @@
     "url": "https://github.com/kalisio/feathers-distributed/issues"
   },
   "scripts": {
-    "prepublish": "npm run compile",
+    "prepare": "npm run compile",
     "publish": "git push origin --tags && npm run changelog && git push origin",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
     "changelog": "github_changelog_generator -u kalisio -p feathers-distributed && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
-    "compile": "shx rm -rf lib/ && babel -d lib/ src/ && cpx \"lib/**\" example/gateway/lib && cpx \"lib/**\" example/service/lib",
+    "compile": "shx rm -rf lib/ && babel -d lib/ src/ && shx cp -R lib/ example/gateway/lib && shx cp -R lib/ example/service/lib",
     "watch": "babel --watch -d lib/ src/",
     "lint": "standard src/**/*.js test/**/*.js --fix",
     "mocha": "cross-env NODE_CONFIG_DIR=./test/config/ mocha --exit --require babel-core/register",
@@ -51,8 +51,9 @@
   "dependencies": {
     "@feathersjs/commons": "^1.4.0",
     "@feathersjs/errors": "^3.3.0",
-    "cote": "^0.20.0",
-    "debug": "^4.1.0"
+    "cote": "^1.0.0",
+    "debug": "^4.1.0",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "@feathersjs/authentication": "^2.1.3",
@@ -73,7 +74,6 @@
     "chai": "^4.2.0",
     "chai-lint": "^0.1.1",
     "chai-spies": "^0.7.1",
-    "cpx": "^1.5.0",
     "cross-env": "^5.0.1",
     "feathers-hooks-common": "^4.10.0",
     "feathers-memory": "2.1.0",
@@ -85,6 +85,6 @@
     "socket.io-client": "^2.0.3",
     "standard": "^14.0.0",
     "superagent": "^5.1.0",
-    "uuid": "^3.1.0"
+    "why-is-node-running": "^2.1.0"
   }
 }

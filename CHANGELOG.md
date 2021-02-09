@@ -1,5 +1,75 @@
 # Changelog
 
+## [v1.0.4](https://github.com/kalisio/feathers-distributed/tree/v1.0.4) (2020-09-21)
+
+[Full Changelog](https://github.com/kalisio/feathers-distributed/compare/v1.0.3...v1.0.4)
+
+**Implemented enhancements:**
+
+- Add healthcheck endpoint\(s\) [\#79](https://github.com/kalisio/feathers-distributed/issues/79)
+
+**Closed issues:**
+
+- Remove console.log from source-code [\#75](https://github.com/kalisio/feathers-distributed/issues/75)
+- ERROR install if npm uuid package is already a dependency [\#72](https://github.com/kalisio/feathers-distributed/issues/72)
+- Working app or example of per-service authentication? [\#71](https://github.com/kalisio/feathers-distributed/issues/71)
+
+**Merged pull requests:**
+
+- Update package.json [\#76](https://github.com/kalisio/feathers-distributed/pull/76) ([THEJean-Kevin](https://github.com/THEJean-Kevin))
+- Bump lodash from 4.17.5 to 4.17.19 [\#73](https://github.com/kalisio/feathers-distributed/pull/73) ([dependabot[bot]](https://github.com/apps/dependabot))
+- \[Security\] Bump lodash.merge from 4.6.1 to 4.6.2 [\#63](https://github.com/kalisio/feathers-distributed/pull/63) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- \[Security\] Bump fstream from 1.0.11 to 1.0.12 [\#58](https://github.com/kalisio/feathers-distributed/pull/58) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
+## [v1.0.3](https://github.com/kalisio/feathers-distributed/tree/v1.0.3) (2020-06-22)
+
+[Full Changelog](https://github.com/kalisio/feathers-distributed/compare/v1.0.2...v1.0.3)
+
+**Closed issues:**
+
+- Not Working With REST API [\#69](https://github.com/kalisio/feathers-distributed/issues/69)
+- Migrating multiple Feathers apps from v0.x to v1.x [\#56](https://github.com/kalisio/feathers-distributed/issues/56)
+
+## [v1.0.2](https://github.com/kalisio/feathers-distributed/tree/v1.0.2) (2020-05-15)
+
+[Full Changelog](https://github.com/kalisio/feathers-distributed/compare/v1.0.1...v1.0.2)
+
+**Closed issues:**
+
+- Babel compile for target above NodeJS 10 [\#55](https://github.com/kalisio/feathers-distributed/issues/55)
+
+## [v1.0.1](https://github.com/kalisio/feathers-distributed/tree/v1.0.1) (2020-05-12)
+
+[Full Changelog](https://github.com/kalisio/feathers-distributed/compare/v1.0.0...v1.0.1)
+
+## [v1.0.0](https://github.com/kalisio/feathers-distributed/tree/v1.0.0) (2020-05-12)
+
+[Full Changelog](https://github.com/kalisio/feathers-distributed/compare/v0.7.1...v1.0.0)
+
+**Implemented enhancements:**
+
+- Performance overhead with a large number of services [\#48](https://github.com/kalisio/feathers-distributed/issues/48)
+- Upgrade to latest Node.js LTS [\#42](https://github.com/kalisio/feathers-distributed/issues/42)
+
+**Fixed bugs:**
+
+- Race condition on service discovery [\#49](https://github.com/kalisio/feathers-distributed/issues/49)
+- Port allocation seems to fail in a Docker Swarm without port binding [\#45](https://github.com/kalisio/feathers-distributed/issues/45)
+- Crash in v0.7 when registering middlewares [\#39](https://github.com/kalisio/feathers-distributed/issues/39)
+
+**Closed issues:**
+
+- Publishing a new NPM version [\#52](https://github.com/kalisio/feathers-distributed/issues/52)
+- Mac OS is crashing when debugger stops on a breakpoint [\#47](https://github.com/kalisio/feathers-distributed/issues/47)
+- When to initialized the library [\#46](https://github.com/kalisio/feathers-distributed/issues/46)
+- npm install is not copying necessary files. [\#41](https://github.com/kalisio/feathers-distributed/issues/41)
+
+**Merged pull requests:**
+
+- Allows app to disable hello logs for the remote services [\#50](https://github.com/kalisio/feathers-distributed/pull/50) ([superdevofficial](https://github.com/superdevofficial))
+- Events Publisher/Subscriber creation [\#44](https://github.com/kalisio/feathers-distributed/pull/44) ([dekelev](https://github.com/dekelev))
+- Bump extend from 3.0.1 to 3.0.2 [\#40](https://github.com/kalisio/feathers-distributed/pull/40) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.7.1](https://github.com/kalisio/feathers-distributed/tree/v0.7.1) (2019-11-04)
 
 [Full Changelog](https://github.com/kalisio/feathers-distributed/compare/v0.7.0...v0.7.1)
@@ -10,7 +80,7 @@
 
 **Implemented enhancements:**
 
-- Allow to select which events to be distributed [\#37](https://github.com/kalisio/feathers-distributed/issues/37)
+- Allow to select statically which events to be distributed [\#37](https://github.com/kalisio/feathers-distributed/issues/37)
 
 **Fixed bugs:**
 
