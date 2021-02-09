@@ -13,6 +13,37 @@ class RemoteService {
     // This flag indicates to the plugin this is a remote service
     this.remote = true
     this.events = options.events
+    this.remoteEvents = options.events || ['created', 'updated', 'patched', 'removed']
+    this.docs = options.docs
+  }
+
+  setup (app, path) {
+    // Create the request manager to remote ones for this service
+    this.requester = new app.cote.Requester({
+      name: path + ' requester',
+      namespace: path,
+      key: path,
+      requests: ['find', 'get', 'create', 'update', 'patch', 'remove']
+    }, app.coteOptions)
+    this.path = path
+    debug('Requester created for remote service on path ' + this.path)
+
+    if (app.distributionOptions.publishEvents && this.remoteEvents.length) {
+      // Create the subscriber to listen to events from other nodes
+      this.serviceEventsSubscriber = new app.cote.Subscriber({
+        name: path + ' events subscriber',
+        namespace: path,
+        key: path,
+        subscribesTo: this.remoteEvents
+      }, app.coteOptions)
+      this.remoteEvents.forEach(event => {
+        this.serviceEventsSubscriber.on(event, object => {
+          debug(`Dispatching ${event} remote service event on path ` + path, object)
+          this.emit(event, object)
+        })
+      })
+      debug('Subscriber created for remote service events on path ' + this.path, this.remoteEvents)
+    }
   }
 
   // Perform requests to other nodes
