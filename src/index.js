@@ -113,8 +113,8 @@ async function registerApplication (app, applicationDescriptor) {
   await promisify(setTimeout)(app.distributionOptions.componentDelay)
   // Subscriber to listen to events from other nodes
   const events = app.distributionOptions.distributedEvents
-  if (typeof(app.serviceSubscriber) === 'undefined') {
-    app.serviceSubscriber = {}
+  if (typeof(app.serviceSubscribers) === 'undefined') {
+    app.serviceSubscribers = {}
   }
   app.serviceEventsSubscribers[key] = new app.cote.Subscriber({
     name: 'feathers services events subscriber',
