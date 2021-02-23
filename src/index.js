@@ -92,9 +92,7 @@ async function registerApplication (app, applicationDescriptor) {
 
   const key = applicationDescriptor.key
   // Already registered
-  if (typeof(app.serviceRequesters) === 'undefined') {
-    app.serviceRequesters = {}
-  }
+
   if (!!app.serviceRequesters[key]) {
     debug('Ignoring already registered remote app with uuid ' + app.uuid + ' and key ' + key)
     return
@@ -113,9 +111,7 @@ async function registerApplication (app, applicationDescriptor) {
   await promisify(setTimeout)(app.distributionOptions.componentDelay)
   // Subscriber to listen to events from other nodes
   const events = app.distributionOptions.distributedEvents
-  if (typeof(app.serviceEventsSubscribers) === 'undefined') {
-    app.serviceEventsSubscribers = {}
-  }
+
   app.serviceEventsSubscribers[key] = new app.cote.Subscriber({
     name: 'feathers services events subscriber',
     namespace: key,
